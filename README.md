@@ -4,19 +4,19 @@
 
 ## Materials and methods
 
-- In order to compare the results of the three available open-source OCSR tools Imago (version 2.0) (1), Molvec (version 0.9.7) (2) and OSRA (version 2.1.0) (3), multiple datasets which are freely available online were analyzed analogously to the validation procedure by the OSRA developers (4):
+- In order to compare the results of the three available open-source OCSR tools Imago (version 2.0), MolVec (version 0.9.7) and OSRA (version 2.1.0), multiple datasets which are freely available online were analyzed according to the validation procedure of the OSRA developers (4). The datasets were::
 
-  - A set of 5719 images of chemical structures and the corresponding mol-files (based on data by the US Patent Office (USPTO)) was obtained from the OSRA online presence (4). 
+  - A set of 5719 images of chemical structures and the corresponding molfiles (based on data from the USPTO) obtained from the OSRA online presence (4). 
 
-  - Along with the publication of Molrec (5) which was developed by the University of Birmingham (UOB), a dataset of 5740 images of chemical structures with the corresponding mol files was published (6). 
+  - The dataset (UOB) of 5740 images and molfiles of chemical structures developed by the University of Birmingham, United Kingdom, and published alongside MolRec  (6). 
 
-  - The Conference and Labs of the Evaluation Forum (CLEF) published a test set of 961 images and mol files in 2012 (7).
+  - The Conference and Labs of the Evaluation Forum (CLEF) test set of 961 images and molfiles published in 2012 (7).
 
-  - A subset (450 images and SD files) of a dataset published with ChemInfty (8) which is based on data from the Japanese Patent Office (JPO) was obtained from the OSRA online presence (4). It is necessary to state that this dataset contains many labels (sometimes with japanese characters) and irregular features (like variations in the line thickness). Additionally, some images have a poor quality and contain a lot of noise.
+  - A subset (450 images and SDfiles) of a dataset published with ChemInfty (see above) based on data from the Japanese Patent Office (JPO), obtained from the OSRA online presence (4). (Note that this dataset contains many labels (sometimes with Japanese characters) and irregular features, such as variations in the line thickness. Additionally, some images have a poor quality and contain a lot of noise.) 
 
-- The TIFF images were converted to PNG images with a resolution of 72 dpi to assure comparability as MolVec and Imago both showed problems handling those files in batch mode. 
+- The TIFF images were converted to PNG images with a resolution of 72 dpi to assure comparability, as MolVec and Imago both showed problems handling those TIFF files in batch mode.
 
-- Converted Images can be found on the [input]() directory
+- Converted Images can be found on the [input](https://github.com/Kohulan/OCSR_Review/tree/master/assets/images) directory
 
 ### Running Imago
 - Command line version of Imago (9) was used here.
@@ -26,7 +26,7 @@
 
 ### Running MolVec with parallelization
 ```
-java -cp molvec-0.9.7.jar:common-image-3.4.1.jar:common-io-3.4.1.jar:common-lang-3.4.1.jar:commons-cli-1.4.jar:imageio-core-3.4.1.jar:imageio-metadata-3.4.1.jar:imageio-tiff-3.4.1.jar:ncats-common-0.3.3.jar:ncats-common-cli-0.9.1.jar gov.nih.ncats.molvec.Main -dir /image/directory/path -parallel 30 -outDir /output/directory/path
+java -cp molvec-0.9.7.jar:common-image-3.4.1.jar:common-io-3.4.1.jar:common-lang-3.4.1.jar:commons-cli-1.4.jar:imageio-core-3.4.1.jar:imageio-metadata-3.4.1.jar:imageio-tiff-3.4.1.jar:ncats-common-0.3.3.jar:ncats-common-cli-0.9.1.jar gov.nih.ncats.molvec.Main -dir /image/directory/path -outDir /output/directory/path
 ```
 
 ### Running OSRA
@@ -45,13 +45,13 @@ for image in *.png; do osra -f sdf -a /path/to/superatom/dictionary/superatom.tx
 
 Dataset | | MolVec 0.9.7 | Imago 2.0 | OSRA 2.1
 --- | --- | --- | --- | ---
-USPTO | Time (min) | 4.52 | 72.83 | 145.04
-*(5719 images)* | Accuracy | 88.37% | 87.20% | 87.69%
- UOB | Time (min) | 3.13 | 152.52 | 125.78
- *(5740 images)* | Accuracy | 88.07% | 63.54% | 86.50%
-CLEF 2012 | Time (min) | 0.59 | 16.03 | 21.33
-*(961 images)* | Accuracy | 80.54% | 65.45% | 94.90%
-JPO | Time (min) | 1.03 | 22.55 | 16.68
+USPTO | Time (min) | 28.65 | 72.83 | 145.04
+*(5719 images)* | Accuracy | 88.41% | 87.20% | 87.69%
+ UOB | Time (min) | 28.42 | 152.52 | 125.78
+ *(5740 images)* | Accuracy | 88.39% | 63.54% | 86.50%
+CLEF 2012 | Time (min) | 4.41 | 16.03 | 21.33
+*(961 images)* | Accuracy | 80.96% | 65.45% | 94.90%
+JPO | Time (min) | 7.50 | 22.55 | 16.68
 *(450 images)* | Accuracy | 66.67% | 40.00% | 57.78%
 
 - (a) Accuracy (Right: higher the better) and (b) Total time for processing (Left: lower the better)
@@ -59,10 +59,11 @@ JPO | Time (min) | 1.03 | 22.55 | 16.68
 Accuracy | Total time for processing
 --- | ---
 ![GitHub Logo](https://github.com/Kohulan/OCSR_Review/blob/master/assets/OCSR_1.png?raw=true) | ![GitHub Logo](https://github.com/Kohulan/OCSR_Review/blob/master/assets/OCSR_2.png?raw=true)
+Figure 1 | Figure 2
 
 #### Conclusion
 
-- MolVec is the fastest tool due to its possibility of parallelization. It is necessary to state that without the parallelization, MolVec would not be faster than Imago or OSRA. All three tools performed fairly well on the given set of images. As shown in Figure 1, the proportion of accurate results produced by MolVec and OSRA with the UOB, CLEF, and JPO datasets was approximately 20% higher than in the results produced by Imago. The lower overall performance of all three tools with the JPO dataset is likely due to the lower quality of the depictions, the presence of labels, and other irregular features.
+- As shown in the Table, MolVec processes the images significantly faster than its competitors. All three tools performed fairly well on the given set of images. As illustrated in Figure 1, the proportion of accurate results produced by MolVec and OSRA with the UOB, CLEF and JPO datasets was approximately 20% higher than in the results produced by Imago. The lower overall performance of all three tools with the JPO dataset is likely due to the lower quality of the depictions, the presence of labels and other irregular features. The extraordinarily good performance of OSRA on the CLEF dataset is a notable observation. The examination of the images in the dataset reveals a set of well-segmented, clean chemical structure depictions which is seemingly handled especially well by OSRA.
 
 ## References
 1.	Smolov V, Zentsev F, Rybalkin M. Imago: Open-Source Toolkit for 2D Chemical Structure Image Recognition. In: TREC [Internet]. Citeseer; 2011. Available from: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.471.8925&rep=rep1&type=pdf\
