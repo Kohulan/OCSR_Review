@@ -82,6 +82,9 @@ Accuracy | Total time for processing
 - [Kohulan](github.com/Kohulan)
 - [Otto Brinkhaus](github.com/OBrink)
 
+## Citation
+- A review of optical chemical structure recognition tools is currently under scientific review - more information will be available soon.
+
 ## More information about our research group
 - [Website](https://cheminf.uni-jena.de)
 
