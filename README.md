@@ -87,6 +87,4 @@ Figure 1 | Figure 2
 - A review of optical chemical structure recognition tools is currently under scientific review - more information will be available soon.
 
 ## More information about our research group
-- [Website](https://cheminf.uni-jena.de)
-
-![GitHub Logo](https://github.com/Kohulan/DECIMER-Image-to-SMILES/blob/master/assets/CheminfGit.png?raw=true)
+[![GitHub Logo](https://github.com/Kohulan/DECIMER-Image-to-SMILES/blob/master/assets/CheminfGit.png?raw=true)](https://cheminf.uni-jena.de)
