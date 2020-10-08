@@ -84,7 +84,22 @@ Figure 1 | Figure 2
 - [Otto Brinkhaus](github.com/OBrink)
 
 ## Citation
-- A review of optical chemical structure recognition tools is currently under scientific review - more information will be available soon.
+- Use this bibtex to cite the work
+```
+@article{Rajan2020,
+author = {Rajan, Kohulan and Brinkhaus, Henning Otto and Zielesny, Achim and Steinbeck, Christoph},
+doi = {10.1186/s13321-020-00465-0},
+file = {:Users/kohulanrajan/Downloads/s13321-020-00465-0.pdf:pdf},
+issn = {1758-2946},
+journal = {Journal of Cheminformatics},
+keywords = {Chemical data extraction,Chemical structure,Data mining,Machine learning,Named entity recognition,Open data,Optical chemical structure recognition,chemical data extraction,chemical structure,data mining,machine learning,named entity recognition,open data,optical chemical structure recognition},
+pages = {1--13},
+publisher = {Springer International Publishing},
+title = {{A review of optical chemical structure recognition tools}},
+url = {https://doi.org/10.1186/s13321-020-00465-0},
+year = {2020}
+}
+```
 
 ## More information about our research group
 [![GitHub Logo](https://github.com/Kohulan/DECIMER-Image-to-SMILES/blob/master/assets/CheminfGit.png?raw=true)](https://cheminf.uni-jena.de)
