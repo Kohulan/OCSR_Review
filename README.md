@@ -1,4 +1,11 @@
 # Optical Chemical Structure Recognition - Benchmark
+[![GitHub release](https://img.shields.io/github/release/Kohulan/OCSR_Review.svg)](https://GitHub.com/Kohulan/OCSR_Review/releases/)
+![versions](https://img.shields.io/pypi/pyversions/OCSR_Review.svg)
+[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://GitHub.com/Kohulan/OCSR_Review/graphs/commit-activity)
+[![GitHub issues](https://img.shields.io/github/issues/Kohulan/OCSR_Review.svg)](https://GitHub.com/Kohulan/OCSR_Review/issues/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Kohulan/OCSR_Review.svg)](https://GitHub.com/Kohulan/OCSR_Review/graphs/contributors/)
+
 
 - This repository contains the information related to the benchmark study on openly available OCSR tools
 
